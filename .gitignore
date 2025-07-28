@@ -1,0 +1,80 @@
+# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,react
+# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,react
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+### Electron ###
+# Electron 빌드 출력 디렉토리 (일반적으로 'dist' 또는 'out')
+dist/
+out/
+
+# Electron-builder 관련 파일
+!.vscode/launch.json # .vscode/launch.json은 이미 위에 포함되어 있으므로 생략
+build/
+release/
+installer/
+
+# 개발 중 생성될 수 있는 임시 파일 및 로그
+*.asar
+*.map
+npm-debug.log*
+yarn-debug.log*
+.eslintcache
+.cache/
+temp/
+
+# 플랫폼별 빌드 아티팩트
+*.dmg
+*.exe
+*.AppImage
+*.deb
+*.rpm
+*.snap
+*.msi
+*.pkg
+*.zip
+*.tar.gz
+*.env
+
+# Node.js 패키지 관리자 관련 캐시
+.npm/
+.yarn/
+npm-cache/
+
+# Electron forge 관련 파일 (Electron forge 사용 시)
+.electron-forge/
+
+# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,react

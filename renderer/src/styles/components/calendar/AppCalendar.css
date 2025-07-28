@@ -1,0 +1,175 @@
+.app-calendar-container {
+    /* max-width: 900px; */
+    min-width: 320px;
+    height: 100%;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.app-calendar-container .react-calendar {
+    width: 100%;
+    border: none !important;
+    font-size: 1em;
+}
+
+/* 일요일 요일 헤더 */
+.app-calendar .react-calendar__weekdays__weekday:first-child {
+    color: var(--color-sunday); /* 일요일 색상 (파란색 계열) */
+}
+
+/* 토요일 요일 헤더 */
+.app-calendar .react-calendar__weekdays__weekday:last-child {
+    color: var(--color-holiday); /* 토요일 색상 (빨간색 계열) */
+}
+
+/* 네비게이션 버튼 공통 스타일 (월 표시 영역) */
+.app-calendar-container .react-calendar__navigation {
+    height: 50px; /* 네비게이션 영역 높이 조정 */
+    margin-bottom: 10px; /* 아래 여백 */
+    background-color: #007bff; /* 이미지와 유사한 파란색 배경 */
+    color: white; /* 텍스트 색상 */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* 가운데 정렬 */
+    border-radius: 8px 8px 0 0; /* 상단 모서리 둥글게 */
+    padding: 0 15px; /* 좌우 패딩 */
+}
+
+.app-calendar-container .react-calendar__navigation__label {
+    flex-grow: 1; /* 라벨이 남은 공간을 채우도록 */
+    text-align: center;
+    color: white; /* 텍스트 색상 */
+    font-size: 1.5em; /* 월 표시 크기 */
+    font-weight: normal; /* 볼드체 아님 */
+    pointer-events: none; /* 클릭 이벤트 막기 */
+}
+
+.app-calendar-container .react-calendar__navigation button {
+    font-size: 2em; /* 화살표 버튼 크기 */
+    color: white; /* 화살표 색상 */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+.app-calendar-container .react-calendar__navigation button:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+.app-calendar-container .react-calendar__navigation button:disabled {
+    color: rgba(255, 255, 255, 0.5);
+    cursor: default;
+}
+
+
+/* 요일 헤더 (MON, TUE 등) 스타일 */
+.app-calendar-container .react-calendar__month-view__weekdays {
+    text-align: center;
+    text-transform: uppercase; /* 대문자로 변경 */
+    font-weight: bold;
+    font-size: 0.8em; /* 요일 폰트 크기 조정 */
+    color: #666; /* 요일 색상 */
+    margin-bottom: 5px; /* 날짜 타일과의 간격 */
+}
+.app-calendar-container .react-calendar__month-view__weekdays__weekday {
+    padding: 5px 0;
+}
+
+/* 날짜 타일 공통 스타일 */
+.app-calendar-container .react-calendar__tile {
+    min-height: 120px; /* 충분한 높이 확보 */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start; /* 좌측 상단 정렬 */
+    padding: 5px;
+    font-size: 0.9em;
+    color: #555;
+    position: relative;
+    box-sizing: border-box;
+    border: 1px solid #eee; /* 모든 타일에 옅은 테두리 */
+    border-radius: 0; /* 테두리 둥글게 하지 않음 */
+}
+/* 첫 번째 열(월요일)의 왼쪽 테두리 제거 */
+.app-calendar-container .react-calendar__month-view__days > div:nth-child(7n+1) {
+    border-left: none;
+}
+/* 마지막 열(일요일)의 오른쪽 테두리 제거 */
+.app-calendar-container .react-calendar__month-view__days > div:nth-child(7n) {
+    border-right: none;
+}
+/* 첫 번째 행의 상단 테두리 제거 */
+.app-calendar-container .react-calendar__month-view__days > div:nth-child(-n+7) {
+    border-top: none;
+}
+
+
+/* 날짜 숫자 (abbr 태그) 스타일 */
+.app-calendar-container .react-calendar__tile abbr {
+    font-size: 1.2em; /* 날짜 숫자 크게 */
+    font-weight: bold;
+    color: #333;
+    display: block;
+    text-align: left; /* 좌측 정렬 */
+    width: 100%;
+    padding-left: 5px; /* 좌측 여백 */
+    margin-bottom: 5px; /* 날짜 숫자 아래에 여백 */
+}
+
+/* 오늘 날짜 & 선택된 날짜 공통 스타일 */
+.app-calendar-container .react-calendar__tile--now {
+    background: transparent; /* 오늘 날짜 배경색 제거 */
+    border-radius: 0;
+}
+.app-calendar-container .react-calendar__tile--active {
+    background: transparent !important; /* 선택된 날짜 배경색 제거 */
+    color: #333 !important; /* 선택된 날짜 텍스트 색상 */
+    border-radius: 0;
+}
+
+/* 비활성 날짜 (이전/다음 달) 스타일 */
+.app-calendar-container .react-calendar__month-view__days__day--neighboringMonth {
+    color: #bbb; /* 이전/다음 달 날짜 색상 연하게 */
+}
+
+.app-calendar-sunday abbr,
+.app-calendar-sunday {
+    color: var(--color-sunday) !important; /* 일요일 (파란색) */
+}
+
+.app-calendar-holiday abbr,
+.app-calendar-holiday {
+    color: var(--color-holiday) !important; /* 토요일 및 공휴일 (빨간색) */
+}
+
+:root {
+    --color-primary: #007bff;
+    --color-primary-light: #e0f2ff;
+    --color-primary-dark: #0056b3;
+    --color-primary-soft: #cce0ff; /* Light blue for selected date */
+
+    --color-background-primary: #f8f9fa;
+    --color-background-secondary: #ffffff;
+
+    --color-text-dark: #333333;
+    --color-text-light: #ffffff;
+    --color-text-light-gray: #6c757d;
+
+    --color-highlight: #28a745; /* Green for today */
+    --color-highlight-dark: #218838;
+
+    --color-sunday: #007bff; /* 파란색 */
+    --color-holiday: #dc3545; /* 빨간색 */
+
+    --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

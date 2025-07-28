@@ -1,0 +1,50 @@
+{
+  "name": "electron",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "electron-start": "electron .",
+    "react-start": "npm start --prefix renderer",
+    "react-build": "npm run build --prefix renderer",
+    "dist": "npm run react-build && electron-builder",
+    "dev": "concurrently \"npm run react-start\" \"wait-on http://localhost:3000 && npm run electron-start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "electron": "^37.2.3",
+    "electron-builder": "^26.0.12",
+    "wait-on": "^8.0.3"
+  },
+  "build": {
+    "appId": "com.lst.calendarApp",
+    "productName": "My Calendar React App",
+    "files": [
+      "main.js",
+      "preload.js",
+      "package.json",
+      "node_modules",
+      "renderer/build/**/*"
+    ],
+    "asar": true,
+    "directories": {
+      "buildResources": "resources",
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+      "icon": "icon.ico"
+    }
+  },
+  "dependencies": {
+    "electron-is-dev": "^3.0.1",
+    "react-dnd": "^16.0.1",
+    "react-dnd-html5-backend": "^16.0.1"
+  }
+}

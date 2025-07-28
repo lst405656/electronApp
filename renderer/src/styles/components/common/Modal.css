@@ -1,0 +1,109 @@
+/* 모달 오버레이 (배경) 스타일 */
+.modal-overlay {
+    position: fixed; /* 뷰포트에 고정 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* 반투명 검은색 배경 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    z-index: 1000; /* 다른 콘텐츠 위에 표시 */
+    animation: fadeIn 0.3s ease-out; /* 부드러운 나타남 효과 */
+}
+
+/* 모달 콘텐츠 박스 스타일 */
+.modal-content {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px; /* 모달의 최대 너비 */
+    width: 90%; /* 화면 크기에 따라 유동적으로 */
+    position: relative;
+    animation: slideIn 0.3s ease-out; /* 부드러운 슬라이드 인 효과 */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 모달 헤더 스타일 */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+    font-weight: 600;
+}
+
+/* 닫기 버튼 스타일 */
+.modal-close-btn {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #aaa;
+    cursor: pointer;
+    line-height: 1; /* 텍스트 정렬 보정 */
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.modal-close-btn:hover {
+    color: #777;
+}
+
+/* 모달 바디 (콘텐츠) 스타일 */
+.modal-body {
+    flex-grow: 1; /* 남은 공간을 채우도록 */
+}
+
+/* 모달 폼 콘텐츠 스타일 (예시) */
+.modal-form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal-form-content input[type="text"] {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box; /* 패딩, 보더가 너비에 포함되도록 */
+}
+
+.modal-form-content button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+}
+
+.modal-form-content button:hover {
+    background-color: #0056b3;
+}
+
+
+/* 애니메이션 키프레임 */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translate(-50%, -50%) scale(0.9); opacity: 0; }
+    to { transform: translate(0, 0) scale(1); opacity: 1; }
+}
