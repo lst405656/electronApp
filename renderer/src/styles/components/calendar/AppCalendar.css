@@ -141,9 +141,9 @@
     color: #bbb; /* 이전/다음 달 날짜 색상 연하게 */
 }
 
-.app-calendar-sunday abbr,
-.app-calendar-sunday {
-    color: var(--color-sunday) !important; /* 일요일 (파란색) */
+.app-calendar-saturday abbr,
+.app-calendar-saturday {
+    color: var(--color-saturday) !important; /* 일요일 (파란색) */
 }
 
 .app-calendar-holiday abbr,
@@ -167,7 +167,7 @@
     --color-highlight: #28a745; /* Green for today */
     --color-highlight-dark: #218838;
 
-    --color-sunday: #007bff; /* 파란색 */
+    --color-saturday: #007bff;
     --color-holiday: #dc3545; /* 빨간색 */
 
     --shadow-small: 0 2px 4px rgba(0, 0, 0, 0.1);

@@ -95,9 +95,9 @@ function AppCalendar({
             const isHoliday = !!holidayMap[formattedDate];
 
             // 클래스 적용
-            if (dayOfWeek === 0) { // 일요일
-                return 'app-calendar-sunday';
-            } else if (dayOfWeek === 6 || isHoliday) { // 토요일 또는 공휴일
+            if (dayOfWeek === 6) { // 토요일
+                return 'app-calendar-saturday';
+            } else if (dayOfWeek === 0 || isHoliday) { // 일요일 또는 공휴일
                 return 'app-calendar-holiday';
             }
         }
